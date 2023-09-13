@@ -1,5 +1,5 @@
 import { Button } from "./components/ui/button";
-import { Github, FileVideo, Upload, Wand2 } from "lucide-react";
+import { Github, FileVideo, Upload } from "lucide-react";
 import { Separator } from "./components/ui/separator";
 import { Textarea } from "./components/ui/textarea";
 import { Label } from "./components/ui/label";
@@ -90,28 +90,6 @@ export function App() {
 
           <form className="space-y-6">
             <div className="space-y-2">
-              <Label>Prompt</Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Selecione um prompt..." />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value={"title"}>Titulo do Youtube</SelectItem>
-                  <SelectItem value={"description"}>
-                    Descrição do Youtube
-                  </SelectItem>
-                </SelectContent>
-              </Select>
-              <span className="text-xm text-muted-foreground block italic">
-                Você poderá customizar esse opção em breve
-              </span>
-            </div>
-          </form>
-
-          <Separator />
-
-          <form className="space-y-6">
-            <div className="space-y-2">
               <Label htmlFor="keywords">Modelo</Label>
               <Select disabled defaultValue="gpt3.5">
                 <SelectTrigger>
@@ -130,20 +108,13 @@ export function App() {
           <Separator />
 
           <form className="space-y-6">
-            <div className="space-y-4">
+            <div className="space-y-2">
               <Label htmlFor="keywords">Modelo</Label>
               <Slider min={0} max={1} step={0.1} />
-              <span className="text-xm text-muted-foreground block italic leading-relaxed">
+              <span className="text-xm text-muted-foreground block italic">
                 Valores mais altos tendem a deixar o resultado mais criativo,
                 mas com possiveis erros.
               </span>
-
-              <Separator />
-
-              <Button className="w-full" type="submit">
-                Executar
-                <Wand2 className="w-4 h-4 ml-2" />
-              </Button>
             </div>
           </form>
         </aside>

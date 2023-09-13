@@ -1,16 +1,8 @@
 import { Button } from "./components/ui/button";
-import { Github, FileVideo, Upload, Wand2 } from "lucide-react";
+import { Github, FileVideo, Upload } from "lucide-react";
 import { Separator } from "./components/ui/separator";
 import { Textarea } from "./components/ui/textarea";
 import { Label } from "./components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./components/ui/select";
-import { Slider } from "./components/ui/slider";
 
 export function App() {
   return (
@@ -54,7 +46,7 @@ export function App() {
           <form className="space-y-6">
             <label
               htmlFor="video"
-              className="border flex rounded-md aspect-video cursor-pointer border-dashed text-sm flex-col items-center justify-center text-muted-foreground hover:bg-primary/5"
+              className="border flex rounded-md aspect-video cursor-pointer border-dashed text-sm flex-col items-center justify-center texte-muted-foreground hover:bg-primary/5"
             >
               <FileVideo className="w-4 h-4" />
               Selecione um video
@@ -76,7 +68,7 @@ export function App() {
               <Textarea
                 id="transcription-prompt"
                 placeholder="Inclua palavras-chave mencionadas no video separadas por vírgula(,)"
-                className="h-20 leading-relaxed resize-none"
+                className="min-h-20 leading-relaxed"
               />
             </div>
 
@@ -88,64 +80,7 @@ export function App() {
 
           <Separator />
 
-          <form className="space-y-6">
-            <div className="space-y-2">
-              <Label>Prompt</Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Selecione um prompt..." />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value={"title"}>Titulo do Youtube</SelectItem>
-                  <SelectItem value={"description"}>
-                    Descrição do Youtube
-                  </SelectItem>
-                </SelectContent>
-              </Select>
-              <span className="text-xm text-muted-foreground block italic">
-                Você poderá customizar esse opção em breve
-              </span>
-            </div>
-          </form>
-
-          <Separator />
-
-          <form className="space-y-6">
-            <div className="space-y-2">
-              <Label htmlFor="keywords">Modelo</Label>
-              <Select disabled defaultValue="gpt3.5">
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value={"gpt3.5"}>GPT 3.5-turbo 16k</SelectItem>
-                </SelectContent>
-              </Select>
-              <span className="text-xm text-muted-foreground block italic">
-                Você poderá customizar esse opção em breve
-              </span>
-            </div>
-          </form>
-
-          <Separator />
-
-          <form className="space-y-6">
-            <div className="space-y-4">
-              <Label htmlFor="keywords">Modelo</Label>
-              <Slider min={0} max={1} step={0.1} />
-              <span className="text-xm text-muted-foreground block italic leading-relaxed">
-                Valores mais altos tendem a deixar o resultado mais criativo,
-                mas com possiveis erros.
-              </span>
-
-              <Separator />
-
-              <Button className="w-full" type="submit">
-                Executar
-                <Wand2 className="w-4 h-4 ml-2" />
-              </Button>
-            </div>
-          </form>
+          <form className="space-y-6"></form>
         </aside>
       </main>
     </div>

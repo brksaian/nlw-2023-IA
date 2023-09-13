@@ -90,28 +90,6 @@ export function App() {
 
           <form className="space-y-6">
             <div className="space-y-2">
-              <Label>Prompt</Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Selecione um prompt..." />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value={"title"}>Titulo do Youtube</SelectItem>
-                  <SelectItem value={"description"}>
-                    Descrição do Youtube
-                  </SelectItem>
-                </SelectContent>
-              </Select>
-              <span className="text-xm text-muted-foreground block italic">
-                Você poderá customizar esse opção em breve
-              </span>
-            </div>
-          </form>
-
-          <Separator />
-
-          <form className="space-y-6">
-            <div className="space-y-2">
               <Label htmlFor="keywords">Modelo</Label>
               <Select disabled defaultValue="gpt3.5">
                 <SelectTrigger>

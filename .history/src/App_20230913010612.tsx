@@ -93,13 +93,10 @@ export function App() {
               <Label>Prompt</Label>
               <Select>
                 <SelectTrigger>
-                  <SelectValue placeholder="Selecione um prompt..." />
+                  <SelectValue placeholder />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value={"title"}>Titulo do Youtube</SelectItem>
-                  <SelectItem value={"description"}>
-                    Descrição do Youtube
-                  </SelectItem>
+                  <SelectItem value={"gpt3.5"}>GPT 3.5-turbo 16k</SelectItem>
                 </SelectContent>
               </Select>
               <span className="text-xm text-muted-foreground block italic">
