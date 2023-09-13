@@ -31,7 +31,7 @@ export function App() {
         </div>
       </div>
       <main className="flex-1 p-6 flex gap-6">
-        <div className="flex flex-col flex-1 gap-4">
+        <div className="flex flex-col flex-1 gap-6 w-1/2">
           <div className="grid grid-rows-2 gap-4 flex-1">
             <Textarea
               placeholder="Inclua o prompt para a IA..."
@@ -102,6 +102,9 @@ export function App() {
                   </SelectItem>
                 </SelectContent>
               </Select>
+              <span className="text-xm text-muted-foreground block italic">
+                Você poderá customizar esse opção em breve
+              </span>
             </div>
           </form>
 

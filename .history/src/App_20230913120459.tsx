@@ -102,6 +102,9 @@ export function App() {
                   </SelectItem>
                 </SelectContent>
               </Select>
+              <span className="text-xm text-muted-foreground block italic">
+                Você poderá customizar esse opção em breve
+              </span>
             </div>
           </form>
 
