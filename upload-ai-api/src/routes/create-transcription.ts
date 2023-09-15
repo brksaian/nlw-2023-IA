@@ -1,3 +1,4 @@
+import { openia } from "./../lib/openia";
 import { FastifyInstance } from "fastify";
 import { prisma } from "../lib/prisma";
 import { z } from "zod";
@@ -26,9 +27,26 @@ export async function createTranscriptionRoute(app: FastifyInstance) {
     const videoPath = video.path;
     const audioReadStream = createReadStream(videoPath);
 
-    return {
-      videoId,
+    const response = await openia.audio.transcriptions.create({
+      file: audioReadStream,
+      model: "whisper-1",
+      language: "en",
+      response_format: "json",
+      temperature: 0,
       prompt,
-    };
+    });
+
+    const transcription = response.text;
+
+    await prisma.video.update({
+      where: {
+        id: videoId,
+      },
+      data: {
+        transcription,
+      },
+    });
+
+    return { transcription };
   });
 }
